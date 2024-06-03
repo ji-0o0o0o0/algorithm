@@ -14,7 +14,7 @@ a.pop()
 print(a)
 
 a.pop(2)
-# 2번째 자리에 있는 3 제
+# 2번째 자리에 있는 3 제외
 print(a)
 
 a.remove(4)
