@@ -1,5 +1,6 @@
+
 import sys
-sys.stdin = open("input.txt","rt")
+#sys.stdin = open("input.txt","rt")
 
 
 '''
@@ -9,14 +10,15 @@ K번째 큰 수
 
 N, K = map(int, input().split())
 a = list(map(int,input().split()))
-b = []
-for x in a:
-    for y in a:
-        for z in a:
-            if x+y+z not in b:
-                b.append(x+y+z)
 
-
-b.sort(reverse=True)
-print(b)
-print(b[K-1])
+#중복 제거 위함
+res = set()
+for x in range(N):
+    for y in range(x+1,N):
+        for z in range(y+1,N):
+                res.add(a[x]+a[y]+a[z])
+# 정렬을 하기 위해 list로 변환
+res = list(res)
+res.sort(reverse=True)
+#print(res)
+print(res[K-1])
