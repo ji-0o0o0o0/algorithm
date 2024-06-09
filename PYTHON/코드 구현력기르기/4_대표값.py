@@ -19,7 +19,13 @@ n = int(input())
 math = list(map(int,input().split()))
 
 # 평균, 소숫점 첫번째 자리에서 반올림
-av = round(sum(math)/n)
+# av = round(sum(math)/n)
+# ** 반올림 할때 round는 round_half_even 방식 즉, 정확하게 하프일때 짝수 쪽으로 근사값을 출력해 준다
+#    하여 round 쓰면 틀리는 경우 발생할 수 도 있음
+# 0.5 더해서 int 형으로 소수점 없애는 방법으로 진행
+av = sum(math)/n+0.5
+av = int(av)
+
 
 #x = 0
 #a = []
